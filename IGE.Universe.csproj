@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{DFAE4F47-EFCC-4E32-BDF3-3FE55F2B7F0F}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IGE.Universe</RootNamespace>
+    <AssemblyName>IGE.Universe</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <BaseIntermediateOutputPath>.\obj\$(Configuration)\</BaseIntermediateOutputPath>
+    <IntermediateOutputPath>.\obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <NoWin32Manifest>False</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>.\bin\$(Configuration)\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>.\bin\$(Configuration)\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseGameMap.cs" />
+    <Compile Include="BaseGameObject.cs" />
+    <Compile Include="DialogueAndQuestSystemScriptContext.cs" />
+    <Compile Include="DialogueAndQuestSystemScriptEnvironment.cs" />
+    <Compile Include="DialogueSystem\BaseDialogueObject.cs" />
+    <Compile Include="DialogueSystem\Dialogue.cs" />
+    <Compile Include="DialogueSystem\DialogueCondition.cs" />
+    <Compile Include="DialogueSystem\DialogueConditionScriptEnvironment.cs" />
+    <Compile Include="DialogueSystem\DialogueContext.cs" />
+    <Compile Include="DialogueSystem\DialogueFragment.cs" />
+    <Compile Include="DialogueSystem\DialogueHub.cs" />
+    <Compile Include="DialogueSystem\DialogueInputPinScriptEnvironment.cs" />
+    <Compile Include="DialogueSystem\DialogueInstruction.cs" />
+    <Compile Include="DialogueSystem\DialogueInstructionScriptEnvironment.cs" />
+    <Compile Include="DialogueSystem\DialogueJump.cs" />
+    <Compile Include="DialogueSystem\DialoguePin.cs" />
+    <Compile Include="DialogueSystem\Dialogues.cs" />
+    <Compile Include="DialogueSystem\DialogueSystemScriptEnvironment.cs" />
+    <Compile Include="IScriptable.cs" />
+    <Compile Include="NPCRelations\NPCRelations.cs" />
+    <Compile Include="ITileDef.cs" />
+    <Compile Include="ITileInstance.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestSystem\BaseQuestObject.cs" />
+    <Compile Include="QuestSystem\IQuestSystemIndexableObject.cs" />
+    <Compile Include="QuestSystem\IQuestSystemObject.cs" />
+    <Compile Include="QuestSystem\IScriptableQuestSystemObject.cs" />
+    <Compile Include="QuestSystem\Quest.cs" />
+    <Compile Include="QuestSystem\QuestCondition.cs" />
+    <Compile Include="QuestSystem\QuestConditionScriptEnvironment.cs" />
+    <Compile Include="QuestSystem\QuestConnection.cs" />
+    <Compile Include="QuestSystem\QuestHub.cs" />
+    <Compile Include="QuestSystem\QuestInputPinScriptEnvironment.cs" />
+    <Compile Include="QuestSystem\QuestInstruction.cs" />
+    <Compile Include="QuestSystem\QuestInstructionScriptEnvironment.cs" />
+    <Compile Include="QuestSystem\QuestLog.cs" />
+    <Compile Include="QuestSystem\QuestLogicGate.cs" />
+    <Compile Include="QuestSystem\QuestObjective.cs" />
+    <Compile Include="QuestSystem\QuestObjectState.cs" />
+    <Compile Include="QuestSystem\QuestOutputPinScriptEnvironment.cs" />
+    <Compile Include="QuestSystem\QuestPin.cs" />
+    <Compile Include="QuestSystem\Quests.cs" />
+    <Compile Include="QuestSystem\QuestSavePoint.cs" />
+    <Compile Include="QuestSystem\QuestSystemScriptEnvironment.cs" />
+    <Compile Include="TileDB.cs" />
+    <Compile Include="World.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IGE.Common\IGE.Common.csproj">
+      <Project>{9FF16105-BE2B-44A2-91C0-D79F38AD8BA6}</Project>
+      <Name>IGE.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IGE.Data\IGE.Data.csproj">
+      <Project>{FAF9071E-04E9-4E02-B8CF-DAA0CB54B590}</Project>
+      <Name>IGE.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IGE.Graphics\IGE.Graphics.csproj">
+      <Project>{398C59DB-AD8B-4176-B7B1-90745103723F}</Project>
+      <Name>IGE.Graphics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IGE.Scripting\IGE.Scripting.csproj">
+      <Project>{AB0F002F-9185-4FE3-B7B0-8BF2E79FC9B3}</Project>
+      <Name>IGE.Scripting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DialogueSystem" />
+    <Folder Include="NPCRelations" />
+    <Folder Include="QuestSystem" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
