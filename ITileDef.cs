@@ -35,7 +35,27 @@ namespace IGE.Universe {
 		/// Keyword is a unique tile name that will be used to identify tile in saves
 		/// </summary>
 		string Keyword { get; }
-		
+
+		/// <summary>
+		/// Name of the group of tiles that look similar and may be picked randomly when placing
+		/// </summary>
+		string RandomizationGroup { get; }
+
+		/// <summary>
+		/// Category of the tile. Useful to categorize when displaying list of tiles in builder
+		/// </summary>
+		string Category { get; }
+
+		/// <summary>
+		/// Name of the tile
+		/// </summary>
+		string Name { get; }
+
+		/// <summary>
+		/// Custom data that might be used by the game 
+		/// </summary>
+		object Data { get; }
+
 		SimpleImage Image { get; }
 		
 		ITileInstance CreateTileInstance(BaseGameMap map, int x, int y, int z);

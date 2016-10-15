@@ -96,5 +96,9 @@ namespace IGE.Universe {
 			m_TileCount = m_TileDefs.Length;
 			m_UncompiledTileDefs = null;
 		}
+		
+		public virtual bool ContainsTile(string keyword) {
+			return m_TileIndex.ContainsKey(keyword);
+		}
 	}
 }
